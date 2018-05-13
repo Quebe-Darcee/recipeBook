@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block title %}Recipes{%endblock%}
+
+{% block content %}
+<h2>Recipes List</h2>
+
+<div class="full-page">
+   <div id="left-column">
+
+      {% for name, recipe in recipes.items() %}
+         <h3>{{name}}</h3>
+         <img src="{{recipe['image']}}">
+         <p><strong>Ingredients:</strong></p>
+         <p>{{recipe['ingredients'] | nl2br}}</p>
+         <p><strong>Directions:</strong></p> 
+         <p>{{recipe['directions']}}</p>
+         <hr>
+      {% endfor %}
+   
+   </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,166 @@
+body {
+  margin: 0px;
+}
+
+.header{
+  font-family: 'Shadows Into Light Two', cursive;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding-left: 50px;
+}
+
+hr {
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.navbar {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  padding-left: 30px;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+  margin: 0px;
+}
+
+.navbar li {
+  list-style: none;
+}
+
+.nav-tab {
+  flex-basis: 100px;
+  border-right: solid 2px lightgrey;
+  height: inherit;
+  line-height: 50px;
+  text-align: center;
+}
+
+.nav-stretch {
+  flex-grow: 1;
+}
+
+.topnav input[type=text] {
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+
+h2 {
+  padding: 15px 130px 0px 130px;
+  text-transform: uppercase;
+  font-family: monaco, Consolas, Lucida Console, monospace;
+  font-size: 28px;
+}
+
+h3 {
+  text-transform: uppercase;
+  font-family: monaco, Consolas, Lucida Console, monospace;
+}
+
+.full-page {
+  padding: 0px 130px 0px 130px;
+  display: flex;
+}
+
+#left-column {
+  flex: 1 0 50%;
+  padding-right: 15px;
+}
+
+#right-column {
+  flex: 1 0 50%;
+  padding-left: 15px;
+}
+
+input {
+  padding: 8px 20px;
+  font-size: 14px;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+  margin: 10px 0px;
+}
+
+textarea {
+  font-size: 14px;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+  margin: 10px 0px;
+}
+
+*:focus { 
+  outline: none;
+  border-color: black;
+}
+
+img {
+  height: 400px;
+}
+
+.descriptive-text {
+  font-size: 12px;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+}
+
+.photos {
+  display: flex;
+}
+
+#photos-left {
+  flex: 1 0 50%;
+}
+
+#photos-right {
+  flex: 1 0 50%;
+}
+
+/*Carousel*/
+
+.carousel {
+  display: flex;
+  flex-direction: row;
+}
+
+.carousel-item {
+  flex: 1 0 25%;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/*Footer*/
+
+.footer {
+  padding: 30px 130px 0px 130px;
+}
+
+.footer-info {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 300px 20px 300px;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+}
