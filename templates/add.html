@@ -7,21 +7,32 @@
 <div class="full-page">
    <div id="left-column">
       <form action="/recipe" method="POST">
-         Name:<br>
-         <input type="text" name="name">
-         <br>
-         Ingredients:<br>
-         <textarea rows="4" cols="75" name="ingredients">
-         </textarea>
-         <br>
-         Directions:<br>
-         <textarea rows="8" cols="75" name="directions">
-         </textarea>
-         <br>
-         Image URL:<br>
-         <input type="text" name="image" style="width: 475px;">
-         <br>
-         <input type="submit" value="Save">
+         <div>
+            Name:<br>
+            <input id="name" type="text" onblur="validateNotEmpty(this, 'invalidNameText')" name="name">
+            <div id="invalidNameText" class="validationText">Please enter the name of the recipe</div>
+         </div>
+         
+         <div>
+            Ingredients:<br>
+            <textarea rows="4" cols="75" id="ingredients" onblur="validateNotEmpty(this, 'invalidIngredientText')" name="ingredients"></textarea>
+            <div id="invalidIngredientText" class="validationText">Please enter the ingredients</div>
+         </div>
+
+         <div>
+            Directions:<br>
+            <textarea rows="8" cols="75" id="directions" onblur="validateNotEmpty(this, 'invalidDirectionText')" name="directions"></textarea>
+            <div id="invalidDirectionText" class="validationText">Please enter the directions</div>
+         </div>
+
+         <div>
+            Image URL:<br>
+            <input type="text" name="image" style="width: 475px;">
+         </div>
+
+         <div>
+            <input type="submit" value="Save">
+         </div>
       </form>
    </div>
 </div>
