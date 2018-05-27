@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block title %}Favorites{%endblock%}
+
+{% block content %}
+<script>
+   recipes = JSON.parse('{{recipes | safe}}'.replace(/\n/g, "\\\\n").replace(/\r/g, "\\\\r").replace(/\t/g, "\\\\t"));
+</script>
+
+<h2>Your Favorites!</h2>
+
+<div class="full-page">
+   <div id="left-column">
+      <div id="favorites">
+      </div>
+   </div>
+</div>
+
+
+{% endblock %}

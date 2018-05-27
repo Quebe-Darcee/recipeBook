@@ -27,6 +27,10 @@ def hello():
 def add():
    return render_template('add.html')
 
+@app.route("/favorites")
+def favorites():
+  return render_template('favorites.html', recipes=json.dumps(load()))
+
 @app.route("/recipes")
 def index():
    return render_template('recipes.html', recipes=load())
