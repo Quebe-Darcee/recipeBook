@@ -8,14 +8,15 @@
    <div id="left-column">
 
       {% for name, recipe in recipes.items() %}
-         <h3>{{name}}<a id="addFavorites" href="#" onclick="window.favorites.add('{{name}}')">| Add to Favorites</a></h3>
-
-         <img src="{{recipe['image']}}">
-         <p><strong>Ingredients:</strong></p>
-         <p>{{recipe['ingredients'] | nl2br}}</p>
-         <p><strong>Directions:</strong></p> 
-         <p>{{recipe['directions']}}</p>
-         <hr>
+         <div id="recipesList">
+            <h3 id="{{name.replace(' ', '-')}}">{{name}}<a id="addFavorites" href="/recipes" onclick="window.favorites.add('{{name}}')">| Add to Favorites</a></h3>
+            <img src="{{recipe['image']}}">
+            <p><strong>Ingredients:</strong></p>
+            <p>{{recipe['ingredients'] | nl2br}}</p>
+            <p><strong>Directions:</strong></p> 
+            <p>{{recipe['directions']}}</p>
+            <hr>
+         </div>
       {% endfor %}
    
    </div>

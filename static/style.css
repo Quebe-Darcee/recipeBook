@@ -141,6 +141,11 @@ img {
   text-align: center;
 }
 
+/*Main Video*/
+.mainVideo {
+  text-align: center;
+}
+
 /*Form Validation*/
 .validationText {
   visibility:hidden;
