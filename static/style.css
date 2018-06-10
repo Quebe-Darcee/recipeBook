@@ -156,6 +156,17 @@ img {
   padding-bottom: 3px;
 }
 
+/*Favorites*/
+#removeFavorites, #addFavorites {
+  -webkit-transition: font-size 1s, color 1s; /* Safari */
+  transition: font-size 1s, color 1s;
+}
+
+#removeFavorites:hover, #addFavorites:hover {
+  font-size: 24px;
+  color: red;
+}
+
 /*Footer*/
 
 .footer {

@@ -27,6 +27,7 @@ carousel.next = function() {
 carousel.prev = function() {
    this.images.push(this.images.shift());
    this.render();
+
 }
 carousel.render = function() {
    if (!this.element) { return; }
@@ -129,7 +130,8 @@ var favs = Object.keys(favorites.names);
 for (i=0; i<favs.length; i++)
 {
    var name = favs[i].replace(/ /g, '-');
-   console.log(name);
    addStar(name);
 }
 
+// remove add to favorites link if already in favorites list
+//   document.get(addFavorites).style.visibility = "hidden";
