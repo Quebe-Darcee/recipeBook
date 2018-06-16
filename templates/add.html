@@ -6,7 +6,7 @@
 
 <div class="full-page">
    <div id="left-column">
-      <form action="/recipe" method="POST">
+      <form action="/recipe" method="POST" onsubmit="saveRecipe()">
          <div>
             Name:<br>
             <input id="name" type="text" onblur="validateNotEmpty(this, 'invalidNameText')" name="name">
@@ -31,7 +31,9 @@
          </div>
 
          <div>
+
             <input type="submit" value="Save">
+            <img id="recipe-icon" src="/static/recipe.png">
          </div>
       </form>
    </div>

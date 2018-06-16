@@ -18,7 +18,6 @@ def load():
    with open("recipes.json", "r") as f:
       return json.load(f)
 
-
 @app.route("/")
 def hello():
    return render_template('index.html', recipes=load())
@@ -49,7 +48,7 @@ def create():
       'image': image
    }
    save(recipes)
-   return redirect("/recipes")
+   return redirect("/add")
 
 if __name__ == "__main__":
     app.run(debug=True)

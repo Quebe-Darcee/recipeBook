@@ -16,6 +16,12 @@ function validateNotEmpty(input, feedback) {
    } 
 }
 
+//
+function saveRecipe() {
+   var icon = get("recipe-icon");
+   icon.className += " recipe-shake"; 
+}
+
 //Carousel
 carousel = {};
 carousel.element = get("carousel");
