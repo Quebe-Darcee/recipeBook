@@ -10,18 +10,21 @@
       {% for name, recipe in recipes.items() %}
          <div id="recipesList">
             <div>
-               <h3 id="{{name.replace(' ', '-')}}">{{name}}<a id="addFavorites" href="/recipes" onclick="window.favorites.add('{{name}}')">| Add to Favorites</a><a href="#"><img id="delete" src="/static/trash-can.png"></a></h3>
-
+               <h3 id="{{name.replace(' ', '-')}}">{{name}}<a id="addFavorites" href="/recipes" onclick="window.favorites.add('{{name}}')">
+                 | Add to Favorites</a><a href="#"><img id="delete" src="/static/trash-can.png"></a></h3>
             </div>
             <img src="{{recipe['image']}}">
             <p><strong>Ingredients:</strong></p>
             <p>{{recipe['ingredients'] | nl2br}}</p>
-            <p><strong>Directions:</strong></p> 
+            <p><strong>Directions:</strong></p>
             <p>{{recipe['directions']}}</p>
+            <br>
+            <button type="button" onclick="searchRecipes('{{name}}', 'search-button-{{name.replace(' ', '-')}}')" id="search-button-{{name.replace(' ', '-')}}" class="search-button"><span>Find similar recipes</span></button>
+
             <hr>
          </div>
       {% endfor %}
-   
+
    </div>
 </div>
 

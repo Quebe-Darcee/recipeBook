@@ -12,14 +12,14 @@ function validateNotEmpty(input, feedback) {
    }
    else
    {
-      get(feedback).style.visibility = "hidden";  
-   } 
+      get(feedback).style.visibility = "hidden";
+   }
 }
 
 //
 function saveRecipe() {
    var icon = get("recipe-icon");
-   icon.className += " recipe-shake"; 
+   icon.className += " recipe-shake";
 }
 
 //Carousel
@@ -75,7 +75,7 @@ favorites.renderRecipe = function(name, recipe) {
       <img src="${recipe['image']}">
       <p><strong>Ingredients:</strong></p>
       <p>${ingredients}</p>
-      <p><strong>Directions:</strong></p> 
+      <p><strong>Directions:</strong></p>
       <p>${recipe['directions']}</p>
       <hr>
    `;
@@ -83,7 +83,7 @@ favorites.renderRecipe = function(name, recipe) {
 favorites.render = function() {
    var element = get("favorites");
    if (!element) { return; }
-   
+
    element.innerHTML = '';
 
    var keys = Object.keys(this.names);
@@ -91,7 +91,7 @@ favorites.render = function() {
    {
       name = keys[i];
       recipe = recipes[name];
-      
+
       element.innerHTML += this.renderRecipe(name, recipe);
    }
 }
@@ -137,6 +137,50 @@ for (i=0; i<favs.length; i++)
 {
    var name = favs[i].replace(/ /g, '-');
    addStar(name);
+}
+
+//Search Similar recipes
+function displayResults(items, id) {
+  var prevResults = get('search-results');
+  if (prevResults)
+  {
+    prevResults.parentElement.removeChild(prevResults);
+  }
+  console.log(items, id);
+  var button = get(id);
+  var html = '';
+  for (var i=0; i < items.length; i++) {
+    var item = items[i];
+    html += `<a target="_blank" href="${item.link}">${item.title}</a><br><p>${item.snippet}</p>`
+  }
+  button.insertAdjacentHTML('afterend', `<div id="search-results">${html}</div>`);
+}
+function searchRecipes(name, id) {
+  var key = window.gapi;
+  var cx = window.gcx;
+  var url = `https://www.googleapis.com/customsearch/v1?key=${key}&cx=${cx}&q=${name}`;
+
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var items = JSON.parse(this.responseText).items;
+      console.log(items);
+      displayResults(items, id);
+    }
+  };
+  xhr.open("GET", url, true);
+  xhr.send();
+
+  // var items = [{
+  //     title: 'Quick and Easy Pizza',
+  //     link: "https://www.allrecipes.com/recipe/20171/quick-and-easy-pizza-crust/",
+  //     snippet: "A quick chewy pizza crust can be made in 30 minutes with just basic pantry ingredients like yeast, flour, vegetable oil, sugar, and salt."
+  //   },
+  //   {
+  //     title: 'Quick and Easy Sauce',
+  //     link: "https://www.allrecipes.com/recipe/20171/quick-and-easy-pizza-crust/",
+  //     snippet: "A quick sauce."
+  //   }];
 }
 
 // remove add to favorites link if already in favorites list

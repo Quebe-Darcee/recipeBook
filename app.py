@@ -2,6 +2,7 @@ import json
 from flask import Flask
 from flask import render_template, request, redirect
 from jinja2 import Markup, escape
+import secrets
 
 app = Flask(__name__)
 
@@ -32,7 +33,7 @@ def favorites():
 
 @app.route("/recipes")
 def index():
-   return render_template('recipes.html', recipes=load())
+   return render_template('recipes.html', recipes=load(), gapi=secrets.gapi, gcx=secrets.gcx)
 
 @app.route("/recipe", methods=['POST'])
 def create():

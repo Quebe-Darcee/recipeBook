@@ -54,7 +54,7 @@ a {
 
 #recipe-icon {
   height: 70px;
-  float: left; 
+  float: left;
 }
 
 .recipe-shake {
@@ -73,6 +73,48 @@ a {
     80% { transform: translate(-1px, -1px) rotate(1deg); }
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.search-button {
+  padding: 10px;
+  background-color: white;
+  margin: 0px 0px 20px 0px;
+  transition: all 0.5s;
+  border-radius: 2px;
+  border: solid #a8a8a8 1px;
+}
+
+.search-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.search-button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.search-button:hover span {
+  padding-right: 25px;
+}
+
+.search-button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+#search-results a{
+  font-weight: bold;
+}
+
+#search-results a:hover {
+  color: red;
 }
 
 h2 {
@@ -115,7 +157,7 @@ textarea {
   margin: 10px 0px;
 }
 
-*:focus { 
+*:focus {
   outline: none;
   border-color: black;
 }
