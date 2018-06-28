@@ -4,19 +4,21 @@ function get(id) {
 }
 
 //Form Validation
-function validateNotEmpty(input, feedback) {
+function validateNotEmpty(input, feedback, inputID) {
    var value = input.value.trim();
    if (!value.length > 0)
    {
-      get(feedback).style.visibility = "visible";
+     get(feedback).style.visibility = "visible";
+     get(inputID).className += "input-invalid";
    }
    else
    {
       get(feedback).style.visibility = "hidden";
+      get(inputID).classList.remove('input-invalid');
    }
 }
 
-//
+// Shake recipe icon
 function saveRecipe() {
    var icon = get("recipe-icon");
    icon.className += " recipe-shake";

@@ -149,13 +149,25 @@ input {
   font-size: 14px;
   font-family: Tahoma, Verdana, Segoe, sans-serif;
   margin: 10px 0px;
+  transition: border 2s ease;
 }
+
 
 textarea {
   font-size: 14px;
   font-family: Tahoma, Verdana, Segoe, sans-serif;
   margin: 10px 0px;
+  transition: border 2s ease;
 }
+
+.input-invalid {
+  border: red 3px solid;
+}
+
+.input-valid {
+  border: black 1px solid;
+}
+
 
 *:focus {
   outline: none;

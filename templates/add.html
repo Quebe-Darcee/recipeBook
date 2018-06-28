@@ -9,19 +9,19 @@
       <form action="/recipe" method="POST" onsubmit="saveRecipe()">
          <div>
             Name:<br>
-            <input id="name" type="text" onblur="validateNotEmpty(this, 'invalidNameText')" name="name">
+            <input id="name" type="text" onblur="validateNotEmpty(this, 'invalidNameText', 'name')" name="name">
             <div id="invalidNameText" class="validationText">Please enter the name of the recipe</div>
          </div>
-         
+
          <div>
             Ingredients:<br>
-            <textarea rows="4" cols="75" id="ingredients" onblur="validateNotEmpty(this, 'invalidIngredientText')" name="ingredients"></textarea>
+            <textarea rows="4" cols="75" id="ingredients" onblur="validateNotEmpty(this, 'invalidIngredientText', 'ingredients')" name="ingredients"></textarea>
             <div id="invalidIngredientText" class="validationText">Please enter the ingredients</div>
          </div>
 
          <div>
             Directions:<br>
-            <textarea rows="8" cols="75" id="directions" onblur="validateNotEmpty(this, 'invalidDirectionText')" name="directions"></textarea>
+            <textarea rows="8" cols="75" id="directions" onblur="validateNotEmpty(this, 'invalidDirectionText', 'directions')" name="directions"></textarea>
             <div id="invalidDirectionText" class="validationText">Please enter the directions</div>
          </div>
 
