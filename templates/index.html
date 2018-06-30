@@ -2,18 +2,17 @@
 {% block title %}Home{%endblock%}
 
 {% block content %}
-
 <div>
    <div>
       <div class="carousel" id="carousel">
-         <a href="#" class="carousel-item"><img src="/static/food1.jpg"></a>
+         <a href="#" class="carousel-item" ontouchend="carousel.prev()"><img src="/static/food1.jpg"></a>
          <a href="#" class="carousel-item"><img src="/static/food2.jpg"></a>
-         <a href="#" class="carousel-item"><img src="/static/food3.jpg"></a>
+         <a href="#" class="carousel-item" ontouchend="carousel.next()"><img src="/static/food3.jpg"></a>
          <a href="#" class="carousel-item"><img src="/static/food4.jpg"></a>
       </div>
-      
+
       <!-- Next and previous buttons -->
-      <div class="carousel-navigation"> 
+      <div class="carousel-navigation">
         <a class="prev" onclick="carousel.prev()">&#10094;</a>
         <a class="next" onclick="carousel.next()">&#10095;</a>
       </div>

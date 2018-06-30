@@ -48,6 +48,14 @@ carousel.render = function() {
 
 carousel.render();
 
+// welcome alert
+function welcomeAlert() {
+  if (window.location.pathname == "/")
+  {
+      alert("Welcome! We hope you find a recipe you like.");
+  }
+}
+
 //Local Storage and Favorites Tab
 favorites = {};
 favorites.names = {};
