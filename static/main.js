@@ -29,6 +29,7 @@ carousel = {};
 carousel.element = get("carousel");
 carousel.images = ['food1.jpg', 'food2.jpg',  'food3.jpg', 'food4.jpg'];
 carousel.next = function() {
+  console.log("next function activated");
    this.images.unshift(this.images.pop());
    this.render()
 }
@@ -47,6 +48,8 @@ carousel.render = function() {
 }
 
 carousel.render();
+
+//get("carousel").ontouchstart = this.next;
 
 // welcome alert
 function welcomeAlert() {
