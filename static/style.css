@@ -200,6 +200,7 @@ img {
 .carousel {
   display: flex;
   flex-direction: row;
+  overflow: hidden;
 }
 
 .carousel-item {
