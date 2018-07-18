@@ -13,7 +13,7 @@
                <h3 id="{{name.replace(' ', '-')}}">{{name}}<a id="addFavorites" href="/recipes" onclick="window.favorites.add('{{name}}')">
                  | Add to Favorites</a><a href="#"><!--<img id="delete" src="/static/trash-can.png">--></a></h3>
             </div>
-            <img src="{{recipe['image']}}">
+            <img src="{{recipe['image']}}" class="recipe-img">
             <p><strong>Ingredients:</strong></p>
             <p>{{recipe['ingredients'] | nl2br}}</p>
             <p><strong>Directions:</strong></p>
