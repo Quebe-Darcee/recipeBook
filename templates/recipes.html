@@ -17,7 +17,7 @@
             <p><strong>Ingredients:</strong></p>
             <p>{{recipe['ingredients'] | nl2br}}</p>
             <p><strong>Directions:</strong></p>
-            <p>{{recipe['directions']}}</p>
+            <p>{{recipe['directions'] | nl2br}}</p>
             <br>
             <button type="button" onclick="searchRecipes('{{name}}', 'search-button-{{name.replace(' ', '-')}}')" id="search-button-{{name.replace(' ', '-')}}" class="search-button"><span>Find similar recipes</span></button>
 
