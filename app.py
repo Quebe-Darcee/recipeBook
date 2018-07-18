@@ -35,6 +35,10 @@ def favorites():
 def index():
    return render_template('recipes.html', recipes=load(), gapi=secrets.gapi, gcx=secrets.gcx)
 
+@app.route("/book")
+def book():
+    return render_template('book.html', recipes=load())
+
 @app.route("/recipe", methods=['POST'])
 def create():
    name = request.form["name"]

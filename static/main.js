@@ -49,6 +49,33 @@ carousel.render = function() {
 
 carousel.render();
 
+//Book
+book = {};
+book.show = function(index) {
+  var pages = document.getElementsByClassName("book");
+  for (var i=0; i<pages.length; i++)
+  {
+    pages[i].style.display = "none";
+  }
+  get("book-" + index).style.display = "flex";
+}
+book.index = 1;
+book.next = function() {
+  var pages = document.getElementsByClassName("book");
+  var totalPages = pages.length;
+  this.index++;
+  if (this.index > totalPages)
+    this.index = totalPages;
+  this.show(this.index);
+}
+book.prev = function() {
+  this.index--;
+  if (this.index < 1)
+    this.index = 1;
+  this.show(this.index);
+}
+book.show(1);
+
 //get("carousel").ontouchstart = this.next;
 
 // welcome alert

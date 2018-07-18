@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block title %}Recipes{%endblock%}
+
+{% block content %}
+<div class="full-page">
+
+  {% for name, recipe in recipes.items() %}
+
+  <div id="book-{{loop.index}}" class="book">
+   <div id="left-page">
+     <h1>{{name}}</h1>
+     <img src="{{recipe['image']}}" class="book-img">
+   </div>
+
+   <div id="right-page">
+     <h3>Ingredients:</h3>
+     <p>{{recipe['ingredients'] | nl2br}}</p>
+     <h3>Directions:</h3>
+     <p>{{recipe['directions']}}</p>
+   </div>
+ </div>
+
+   {% endfor %}
+
+</div>
+
+<div class="carousel-navigation">
+  <a class="prev" onclick="book.prev()">&#10094;</a>
+  <a class="next" onclick="book.next()">&#10095;</a>
+</div>
+
+{% endblock %}
