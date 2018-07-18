@@ -224,14 +224,6 @@ img {
 
 }
 
-.recipe-img {
-  transition: transform 0.5s ease;
-}
-
-.recipe-img:hover {
-  transform: scale(1.4, 1.4);
-}
-
 .descriptive-text {
   font-size: 12px;
   font-family: Tahoma, Verdana, Segoe, sans-serif;
@@ -279,6 +271,14 @@ img {
 /*Main Video*/
 .mainVideo {
   text-align: center;
+}
+
+.video {
+  transition: transform 0.5s ease;  
+}
+
+.video:hover {
+  transform: scale(1.4, 1.4);
 }
 
 /*Delete Recipe*/
