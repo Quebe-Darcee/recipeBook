@@ -11,7 +11,7 @@
          <div id="recipesList">
             <div>
                <h3 id="{{name.replace(' ', '-')}}">{{name}}<a id="addFavorites" href="/recipes" onclick="window.favorites.add('{{name}}')">
-                 | Add to Favorites</a><a href="#"><img id="delete" src="/static/trash-can.png"></a></h3>
+                 | Add to Favorites</a><a href="#"><!--<img id="delete" src="/static/trash-can.png">--></a></h3>
             </div>
             <img src="{{recipe['image']}}">
             <p><strong>Ingredients:</strong></p>

@@ -57,7 +57,9 @@ book.show = function(index) {
   {
     pages[i].style.display = "none";
   }
-  get("book-" + index).style.display = "flex";
+  var book = get("book-" + index)
+  if (!book) return;
+  book.style.display = "flex";
 }
 book.index = 1;
 book.next = function() {
@@ -100,6 +102,7 @@ favorites.save = function() {
 favorites.add = function(name) {
    this.names[name] = true;
    this.save();
+
    //get("addFavorites").innerHTML = '<span>| Added</span>';
 }
 // Remove from favorites and save to locale storage
@@ -112,7 +115,7 @@ favorites.renderRecipe = function(name, recipe) {
    ingredients = recipe.ingredients.replace(/\\n/g, "<br>").replace(/\\r/g, "").replace(/\\t/g, "\t");
    return `
       <h3>${name}<a id="removeFavorites" href="#" onclick="window.favorites.remove('${name}')">| Remove from Favorites</a></h3>
-      <img src="${recipe['image']}">
+      <img src="${recipe['image'] || ''}">
       <p><strong>Ingredients:</strong></p>
       <p>${ingredients}</p>
       <p><strong>Directions:</strong></p>
@@ -146,6 +149,7 @@ function addStar(id) {
    cvs.setAttribute("height", "20px");
    cvs.setAttribute("width", "25px");
    var list = get(id);
+   if (!list) return;
    list.insertBefore(cvs, list.childNodes[0]);
 
    var canvas = cvs;
